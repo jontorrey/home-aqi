@@ -8,26 +8,8 @@
     #define SERIAL_OUTPUT Serial
 #endif
 
-//#if defined(ARDUINO_ARCH_AVR)
-//    #pragma message("Defined architecture for ARDUINO_ARCH_AVR.")
-//    #define SERIAL Serial
-//#elif defined(ARDUINO_ARCH_SAM)
-//    #pragma message("Defined architecture for ARDUINO_ARCH_SAM.")
-//    #define SERIAL SerialUSB
-//#elif defined(ARDUINO_ARCH_SAMD)
-//    #pragma message("Defined architecture for ARDUINO_ARCH_SAMD.")
-//    #define SERIAL SerialUSB
-//#elif defined(ARDUINO_ARCH_STM32F4)
-//    #pragma message("Defined architecture for ARDUINO_ARCH_STM32F4.")
-//    #define SERIAL SerialUSB
-//#else
-//    #pragma message("Not found any architecture.")
-//    #define SERIAL Serial
-//#endif
-
 HM330X sensor;
 uint8_t buf[30];
-
 
 const char* str[] = {"sensor num: ", "PM1.0 concentration(CF=1,Standard particulate matter,unit:ug/m3): ",
                      "PM2.5 concentration(CF=1,Standard particulate matter,unit:ug/m3): ",
@@ -125,6 +107,5 @@ void loop() {
         SERIAL_OUTPUT.println(" ");
     }
 
-//    delay(2000);
     delay(5000);
 }
